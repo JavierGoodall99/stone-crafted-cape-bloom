@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -122,8 +123,10 @@ const Blog = () => {
                   <CardDescription className="text-base mb-6">
                     {blogPosts[0].excerpt}
                   </CardDescription>
-                  <Button className="w-fit">
-                    Read More <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button asChild className="w-fit">
+                    <Link to={`/blog/${blogPosts[0].id}`}>
+                      Read More <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
                   </Button>
                 </CardHeader>
               </div>
@@ -169,9 +172,11 @@ const Blog = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="link" className="px-0 group">
-                    Read More{" "}
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-smooth" />
+                  <Button asChild variant="link" className="px-0 group">
+                    <Link to={`/blog/${post.id}`}>
+                      Read More{" "}
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-smooth" />
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>

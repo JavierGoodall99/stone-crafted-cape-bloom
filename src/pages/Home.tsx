@@ -34,18 +34,21 @@ const Home = () => {
 
   const blogPosts = [
     {
+      id: "1",
       title: "The Art of Stone Crafting",
       excerpt: "Discover the ancient techniques we use to create modern masterpieces",
       date: "March 15, 2025",
       image: basinsImage,
     },
     {
+      id: "2",
       title: "Sustainable Stonework",
       excerpt: "How we ensure our craft respects and preserves nature",
       date: "March 10, 2025",
       image: ornamentsImage,
     },
     {
+      id: "3",
       title: "Caring for Your Stone Products",
       excerpt: "Essential tips to maintain the beauty of your handcrafted stone",
       date: "March 5, 2025",
@@ -168,7 +171,7 @@ const Home = () => {
                 </CardHeader>
                 <CardContent>
                   <Button asChild variant="link" className="px-0">
-                    <Link to="/blog">
+                    <Link to={`/blog/${post.id}`}>
                       Read More <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
