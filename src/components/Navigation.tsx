@@ -33,13 +33,15 @@ const Navigation = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
         isScrolled
           ? "bg-background/95 backdrop-blur-md shadow-soft"
-          : "bg-transparent"
+          : "bg-background/20 backdrop-blur-sm"
       }`}
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <h1 className="text-2xl font-display font-bold text-foreground">
+            <h1 className={`text-2xl font-display font-bold transition-smooth ${
+              isScrolled ? "text-foreground" : "text-white"
+            }`}>
               Cape Crafted Stone
             </h1>
           </Link>
@@ -50,10 +52,14 @@ const Navigation = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-body text-sm font-medium transition-smooth hover:text-primary ${
-                  location.pathname === link.path
-                    ? "text-primary"
-                    : "text-foreground"
+                className={`font-body text-sm font-medium transition-smooth ${
+                  isScrolled
+                    ? location.pathname === link.path
+                      ? "text-primary hover:text-primary"
+                      : "text-foreground hover:text-primary"
+                    : location.pathname === link.path
+                      ? "text-white hover:text-white"
+                      : "text-white/90 hover:text-white"
                 }`}
               >
                 {link.name}
@@ -65,7 +71,7 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className={`md:hidden ${isScrolled ? "" : "text-white hover:bg-white/20"}`}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

@@ -64,14 +64,14 @@ const Home = () => {
             backgroundAttachment: "fixed",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-background" />
         </div>
 
         <div className="relative z-10 text-center px-4 animate-fade-up">
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-foreground mb-6">
+          <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 drop-shadow-lg">
             Where Nature Meets Design
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-md">
             Handcrafted stone products that blend timeless beauty with sustainable craftsmanship
           </p>
           <Button asChild size="lg" className="shadow-medium">
